@@ -67,6 +67,7 @@ jobs:
       - name: Run pipeline
         env:
           CHECK_WORKER: "https://${{ secrets.DOMAIN }}/check?sstp=vpn:vpn@"
+          EDGE_HOSTS: "8.35.211.164:2096,104.18.33.96:2053,104.19.151.42:2083,104.17.106.150:2087,172.67.67.2:2053,172.64.229.227:8443,123.111.169.70:2053,172.64.159.17:443,16.163.174.115:443,172.64.187.130:2053,104.18.33.67:2083,172.64.229.102:443,172.66.3.217:2087,youxuan.cf.090227.xyz:2096,cloudflare.182682.xyz:443"
           CHECK_CONCURRENCY: ${{ github.event.inputs.concurrency || '16' }}
           CHECK_TIMEOUT: ${{ github.event.inputs.timeout || '25' }}
           MAX_CHECK_NODES: ${{ github.event.inputs.max_nodes || '0' }}
